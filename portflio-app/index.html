@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <style>
+    body {
+      background-color: #eef2f3;
+      font-family: Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      text-decoration: underline;
+      color: #2c3e50;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      border-style: solid;
+      padding: 15px;
+      margin-top: 20px;
+      background-color: #fff;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+    #skillList {
+  list-style-type: square;
+  columns: 2;
+  padding-left: 20px;
+  color: #2d3436;
+}
+#eduList {
+  list-style-type: disc;
+  columns: 2;
+  padding-left: 20px;
+}
+#expList {
+  list-style-type: circle;
+  columns: 2;
+  padding-left: 20px;
+  color: #2f3640;
+}
+#projectList {
+  list-style-type: circle;
+  columns: 2;
+  padding-left: 20px;
+  color: #34495e;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+   
+    <h1>My Portfolio</h1>
+
+    <div class="section" id="basic-info">
+      <h2>Basic Information</h2>
+      <form id="basicForm">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" required />
+
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required />
+
+  <button type="submit">Save Basic Info</button>
+</form>
+
+<div id="basicInfoResult" style="margin-top: 20px;"></div>
+
+    </div>
+     <div class="section" id="education">
+  <h2>Education</h2>
+
+  <form id="eduForm">
+    <label for="degree">Degree:</label>
+    <input type="text" id="degree" name="degree" required />
+
+    <label for="institution">Institution:</label>
+    <input type="text" id="institution" name="institution" required />
+
+    <label for="start">Start Date:</label>
+    <input type="month" id="start" name="start" required />
+
+    <label for="end">End Date:</label>
+    <input type="month" id="end" name="end" required />
+
+    <button type="submit">Add Education</button>
+  </form>
+
+  <ul id="eduList" style="margin-top: 20px;"></ul>
+  </div>
+  <div class="section" id="skills">
+  <h2>Skills</h2>
+
+  <form id="skillForm">
+    <label for="skillInput">Enter Skill:</label>
+    <input type="text" id="skillInput" name="skillInput" required />
+
+    <button type="submit">Add Skill</button>
+  </form>
+
+  <ul id="skillList" style="margin-top: 20px;"></ul>
+</div>
+<div class="section" id="experience">
+  <h2>Experience</h2>
+
+  <form id="expForm">
+    <label for="job">Job Title:</label>
+    <input type="text" id="job" name="job" required />
+
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company" required />
+
+    <label for="expStart">Start Date:</label>
+    <input type="date" id="expStart" name="expStart" required />
+
+    <label for="expEnd">End Date:</label>
+    <input type="date" id="expEnd" name="expEnd" required />
+
+    <button type="submit">Add Experience</button>
+  </form>
+
+  <ul id="expList" style="margin-top: 20px;"></ul>
+</div>
+
+</div>
+    <div class="section" id="projects">
+  <h2>Projects</h2>
+
+  <form id="projectForm">
+    <label for="projectTitle">Project Title:</label>
+    <input type="text" id="projectTitle" name="projectTitle" required />
+
+    <label for="projectDesc">Description:</label>
+    <textarea id="projectDesc" name="projectDesc" rows="3" required></textarea>
+
+    <button type="submit">Add Project</button>
+  </form>
+
+  <ul id="projectList" style="margin-top: 20px;"></ul>
+</div>
+<hr />
+<div style="text-align: center; margin-top: 30px;">
+  <button onclick="generateReview()">Review My Portfolio</button>
+</div>
+
+<div class="section" id="finalReview" style="display: none;">
+  <h2>Final Portfolio Summary</h2>
+  <div id="reviewContent"></div>
+</div>
+
+  </div>
+<script>
+  document.getElementById("basicForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    const resultDiv = document.getElementById("basicInfoResult");
+    resultDiv.innerHTML = `
+      <h3>Preview:</h3>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+    `;
+  });
+</script>
+<script>
+  document.getElementById("eduForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const degree = document.getElementById("degree").value;
+    const institution = document.getElementById("institution").value;
+    const start = document.getElementById("start").value;
+    const end = document.getElementById("end").value;
+
+    const eduList = document.getElementById("eduList");
+
+    const li = document.createElement("li");
+    li.textContent = `${degree} at ${institution} (${start} to ${end})`;
+    eduList.appendChild(li);
+
+    // Optional: Clear the form after submission
+    document.getElementById("eduForm").reset();
+  });
+</script>
+<script>
+  document.getElementById("skillForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const skill = document.getElementById("skillInput").value.trim();
+
+    if (skill) {
+      const skillList = document.getElementById("skillList");
+      const li = document.createElement("li");
+      li.textContent = skill;
+      skillList.appendChild(li);
+      document.getElementById("skillForm").reset();
+    }
+  });
+</script>
+<script>
+  document.getElementById("expForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const job = document.getElementById("job").value.trim();
+    const company = document.getElementById("company").value.trim();
+    const start = document.getElementById("expStart").value;
+    const end = document.getElementById("expEnd").value;
+
+    const expList = document.getElementById("expList");
+
+    const li = document.createElement("li");
+    li.textContent = `${job} at ${company} (${start} to ${end})`;
+    expList.appendChild(li);
+
+    document.getElementById("expForm").reset();
+  });
+</script>
+<script>
+  document.getElementById("projectForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const title = document.getElementById("projectTitle").value.trim();
+    const desc = document.getElementById("projectDesc").value.trim();
+
+    if (title && desc) {
+      const projectList = document.getElementById("projectList");
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${title}:</strong> ${desc}`;
+      projectList.appendChild(li);
+      document.getElementById("projectForm").reset();
+    }
+  });
+</script>
+<script>
+  function generateReview() {
+    // Get Basic Info
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    // Education List
+    const eduItems = Array.from(document.querySelectorAll("#eduList li"))
+      .map(li => `<li>${li.textContent}</li>`).join("");
+
+    // Skills List
+    const skillItems = Array.from(document.querySelectorAll("#skillList li"))
+      .map(li => `<li>${li.textContent}</li>`).join("");
+
+    // Experience List
+    const expItems = Array.from(document.querySelectorAll("#expList li"))
+      .map(li => `<li>${li.textContent}</li>`).join("");
+
+    // Projects List
+    const projectItems = Array.from(document.querySelectorAll("#projectList li"))
+      .map(li => `<li>${li.innerHTML}</li>`).join("");
+
+    // Set Content
+    const reviewHTML = `
+      <h3>Basic Information</h3>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+
+      <h3>Education</h3>
+      <ul>${eduItems}</ul>
+
+      <h3>Skills</h3>
+      <ul>${skillItems}</ul>
+
+      <h3>Experience</h3>
+      <ul>${expItems}</ul>
+
+      <h3>Projects</h3>
+      <ul>${projectItems}</ul>
+    `;
+
+    document.getElementById("reviewContent").innerHTML = reviewHTML;
+    document.getElementById("finalReview").style.display = "block";
+
+    // Scroll to review
+    document.getElementById("finalReview").scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>

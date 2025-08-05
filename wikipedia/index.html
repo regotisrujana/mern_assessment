@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Wikipedia</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            line-height: 1.5;
+            color: #202122;
+        }
+
+        #content {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #a2a9b1;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #a2a9b1;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            padding-bottom: 0.1em;
+            border-bottom: 1px solid #a2a9b1;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        p, ul, li {
+            font-size: 0.9em;
+        }
+
+        a {
+            color: #3366cc;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .infobox {
+            border: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            width: 22em;
+            margin: 0.5em 0 0.5em 1em;
+            padding: 0.2em;
+            float: right;
+            clear: right;
+            font-size: 0.8em;
+        }
+        
+        .infobox img {
+            max-width: 220px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .infobox caption {
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 0.3em;
+        }
+
+        .infobox th, .infobox td {
+            padding: 0.2em 0.4em;
+            border: 1px solid #a2a9b1;
+        }
+        
+        .infobox th {
+            text-align: left;
+            background-color: #eaecf0;
+        }
+
+        #toc {
+            border: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 1em;
+            width: 250px;
+            float: left;
+            clear: left;
+            font-size: 0.9em;
+        }
+        
+        #toc h2 {
+            font-size: 1.1em;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #toc ul ul {
+            padding-left: 1.5em;
+        }
+
+        /* The CSS for the tooltip */
+        a.tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 14px;
+            z-index: 10;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            white-space: normal;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content">
+
+    <h1>HTML</h1>
+
+    <div class="infobox">
+        <caption class="infobox-caption">HTML5 logo</caption>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5 logo">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tbody>
+                <tr><th>Full name</th><td>Hypertext Markup Language</td></tr>
+                <tr><th>File extension</th><td>.html, .htm</td></tr>
+                <tr><th>Developed by</th><td>World Wide Web Consortium (W3C), WHATWG</td></tr>
+                <tr><th>Initial release</th><td>1993</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="toc">
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#history">1 History</a>
+                <ul>
+                    <li><a href="#early-developments">1.1 Early developments</a></li>
+                    <li><a href="#html5">1.2 HTML5</a></li>
+                </ul>
+            </li>
+            <li><a href="#markup">2 Markup</a></li>
+            <li><a href="#elements">3 Elements</a></li>
+        </ul>
+    </div>
+
+    <p>
+        <strong>Hypertext Markup Language (HTML)</strong> is the standard <a class="tooltip" href="https://en.wikipedia.org/wiki/Markup_language" data-tooltip="A system for annotating a document to define its structure or presentation.">markup language</a> for documents designed to be displayed in a <a class="tooltip" href="https://en.wikipedia.org/wiki/Markup_language"data-tooltip="A software application for accessing, viewing, and navigating web pages.">web browser</a>. It defines the content and structure of <a class="tooltip" href="https://en.wikipedia.org/wiki/Web_content"data-tooltip="Includes text, images, videos, and interactive media shown on websites.">web content</a>. It is often assisted by technologies such as <a class="tooltip" href="https://en.wikipedia.org/wiki/CSS" data-tooltip="A style sheet language used for describing the presentation of a document written in a markup language.">Cascading Style Sheets</a> (CSS) and <a class="tooltip" href="https://en.wikipedia.org/wiki/Scripting_language" data-tooltip="A programming language that automates tasks in an application.">scripting languages</a> such as <a class="tooltip" href="https://en.wikipedia.org/wiki/JavaScript" data-tooltip="A high-level programming language used to make web pages interactive.">JavaScript</a>.
+    </p>
+    <p>
+        <a class="tooltip" href="https://en.wikipedia.org/wiki/Web_browser" data-tooltip="A software application for accessing, viewing, and navigating web pages.">Web browsers</a> receive HTML documents from a <a class="tooltip" href="https://en.wikipedia.org/wiki/Web_server" data-tooltip="A program that stores web pages and sends them to a user when requested.">web server</a> or from local storage and <a class="tooltip" href="https://en.wikipedia.org/wiki/Browser_engine" data-tooltip="To process and display a document on a screen.">render</a> the documents into multimedia <a class="tooltip" href="https://en.wikipedia.org/wiki/Web_page" data-tooltip="A document or information resource suitable for the World Wide Web.">web pages</a>. HTML describes the structure of a <a class="tooltip" href="#" data-tooltip="A document or information resource suitable for the World Wide Web.">web page</a> <a class="tooltip" data-tooltip="Relating to the meaning of a word, phrase, or text.">semantically</a> and originally included cues for its appearance.
+    </p>
+    <p>
+        <a class="tooltip" href="https://en.wikipedia.org/wiki/HTML_element" data-tooltip="The basic building blocks of an HTML document, consisting of a tag, attributes, and content.">HTML elements</a> are the building blocks of HTML pages. With HTML constructs, <a class="tooltip" href="https://en.wikipedia.org/wiki/HTML_element#Images_and_objects" data-tooltip="Visual representations or graphics embedded in a web page.">images</a> and other objects such as <a class="tooltip" href="https://en.wikipedia.org/wiki/HTML_element#Forms" data-tooltip="User-facing elements like text fields, buttons, and checkboxes for collecting user input.">interactive forms</a> may be embedded into the rendered page. HTML provides a means to create <a class="tooltip" href="https://en.wikipedia.org/wiki/Structured_document" data-tooltip="Documents where the content and its organization are explicitly defined and organized.">structured documents</a> by denoting structural <a class="tooltip" data-tooltip="Relating to the meaning of a word, phrase, or text.">semantics</a> for text such as headings, paragraphs, lists, links, quotes, and other items. HTML elements are delineated by <a class="tooltip" href="https://en.wikipedia.org/wiki/Bracket#Angle_brackets" data-tooltip="Keywords enclosed in angle brackets that define how content should be structured.">tags</a>, written using <a class="tooltip" href="#" data-tooltip="The &lt; and &gt; symbols used to enclose HTML tags.">angle brackets</a>. Tags such as <code>&lt;img&gt;</code> and <code>&lt;input&gt;</code> directly introduce content into the page. Other tags such as <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> surround and provide information about document text and may include sub-element tags. Browsers do not display the HTML tags, but use them to interpret the content of the page.
+    </p>
+    <p>
+        <a class="tooltip" href="#" data-tooltip="A programming language that automates tasks in an application.">HTML can embed programs</a> written in a scripting language such as <a class="tooltip" href="#" data-tooltip="A high-level programming language used to make web pages interactive.">JavaScript</a>, which affects the behavior and content of web pages. The inclusion of CSS defines the look and layout of content. The <a class="tooltip" href="#" data-tooltip="The main international standards organization for the World Wide Web.">World Wide Web Consortium (W3C)</a>, former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997. A form of HTML, known as <a class="tooltip" href="#" data-tooltip="The latest and most widely used version of HTML.">HTML5</a>, is used to display video and audio, primarily using the <a class="tooltip" href="#" data-tooltip="An HTML element used to draw graphics, animations, and other visual content dynamically."><code>&lt;canvas&gt;</code> element</a>, together with JavaScript.
+    </p>
+
+    <h2 id="history">History</h2>
+    <h3 id="early-developments">Early developments</h3>
+    <p>
+        <img src="D:\mern_assesement\wikipedia\tim1.jpeg"
+ 
+             alt="Portrait of Tim Berners-Lee" 
+             style="width: 100px; float: right; margin: 0 0 1em 1em;">
+        In 1980, physicist Tim Berners-Lee, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents.
+        In 1989, Berners-Lee wrote a memo proposing an internet-based hypertext system. He is the inventor of the World Wide Web.
+        HTML was first formally documented by Tim Berners-Lee in 1991. The first publicly available description of HTML was a document called "HTML Tags".
+    </p>
+
+    <h3 id="html5">HTML5</h3>
+    <p>
+        Following the competition between browsers and the rise of other web technologies, the World Wide Web Consortium (W3C) and the Web Hypertext Application Technology Working Group (WHATWG) began work on HTML5.
+        The HTML5 specification was published on 28 October 2014 by the W3C.
+    </p>
+
+    <h2 id="markup">Markup</h2>
+    <p>
+        HTML markup consists of several key components, including those called tags (and their attributes), character-based data types, character references and entity references. HTML tags most commonly come in pairs like <code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code>, although some represent empty elements and so are unpaired, for example, <code>&lt;img&gt;</code>.
+    </p>
+
+    <h2 id="elements">Elements</h2>
+    <p>
+        HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page.
+        It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes, and other items.
+    </p>
+
+</div>
+
+</body>
+</html>
