@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nature Scene</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to top, #7ec850 0%, #87ceeb 100%);
+      height: 100vh;
+      position: relative;
+    }
+
+    /* Sun */
+    .sun {
+      position: absolute;
+      top: 60px;
+      left: 80px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #FFD700, #FFA500);
+      border-radius: 50%;
+      box-shadow: 0 0 50px 15px #FFD700;
+    }
+
+    /* Mountains */
+    .mountain {
+      position: absolute;
+      bottom: 100px;
+      width: 0;
+      height: 0;
+      border-left: 200px solid transparent;
+      border-right: 200px solid transparent;
+      border-bottom: 300px solid #556B2F;
+    }
+
+    .mountain.m2 {
+      left: 150px;
+      border-bottom-color: #6B8E23;
+      z-index: -1;
+    }
+
+    .mountain.m3 {
+      left: 300px;
+      border-bottom-color: #3E8E41;
+      z-index: -2;
+    }
+
+    /* House */
+    .house {
+      position: absolute;
+      bottom: 100px;
+      left: 600px;
+      width: 140px;
+      height: 100px;
+      background: #8B0000;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    }
+
+    .roof {
+      position: absolute;
+      bottom: 200px;
+      left: 580px;
+      width: 0;
+      height: 0;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-bottom: 60px solid #4B0082;
+    }
+
+    .door {
+      width: 30px;
+      height: 50px;
+      background: #654321;
+      position: absolute;
+      bottom: 0;
+      left: 55px;
+    }
+
+    /* Tree */
+    .tree {
+      position: absolute;
+      bottom: 100px;
+      left: 850px;
+    }
+
+    .trunk {
+      width: 20px;
+      height: 60px;
+      background: #8B4513;
+      margin: 0 auto;
+    }
+
+    .leaf {
+      width: 80px;
+      height: 80px;
+      background: green;
+      border-radius: 50%;
+      position: absolute;
+      top: -40px;
+      left: -30px;
+    }
+
+    /* Birds */
+    .bird {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-top: 2px solid black;
+      border-left: 2px solid black;
+      transform: rotate(-45deg);
+    }
+
+    .bird:nth-child(1) { top: 80px; left: 500px; }
+    .bird:nth-child(2) { top: 100px; left: 540px; }
+    .bird:nth-child(3) { top: 120px; left: 580px; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sun -->
+  <div class="sun"></div>
+
+  <!-- Mountains -->
+  <div class="mountain m1" style="left: 20px;"></div>
+  <div class="mountain m2"></div>
+  <div class="mountain m3"></div>
+
+  <!-- House -->
+  <div class="roof"></div>
+  <div class="house">
+    <div class="door"></div>
+  </div>
+
+  <!-- Tree -->
+  <div class="tree">
+    <div class="trunk"></div>
+    <div class="leaf"></div>
+  </div>
+
+  <!-- Birds -->
+  <div class="bird"></div>
+  <div class="bird"></div>
+  <div class="bird"></div>
+
+</body>
+</html>
